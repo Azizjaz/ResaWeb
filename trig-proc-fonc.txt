@@ -1,0 +1,61 @@
+Trigger — trig_code_message
+
+Génère automatiquement un code unique de 20 caractères hexadécimaux avec SHA2 (256 bits)
+
+CREATE TRIGGER trig_code_message
+BEFORE INSERT ON t_message_msg
+FOR EACH ROW
+BEGIN
+    SET NEW.msg_code = LOWER(
+        SUBSTRING(SHA2(RAND(), 256), 1, 20)
+    );
+END;
+
+Trigger — trig_correct_jauge
+
+Inverse automatiquement les jauges si l’utilisateur se trompe
+
+CREATE TRIGGER trig_correct_jauge
+BEFORE INSERT ON t_ressource_rsc
+FOR EACH ROW
+BEGIN
+    IF NEW.rsc_jauge_min > NEW.rsc_jauge_max THEN
+        SET @tmp = NEW.rsc_jauge_min;
+        SET NEW.rsc_jauge_min = NEW.rsc_jauge_max;
+        SET NEW.rsc_jauge_max = @tmp;
+    END IF;
+END;
+
+Procédure — ajouter_message()
+
+Insère un message dans la base (date générée automatiquement)
+
+CREATE PROCEDURE ajouter_message(
+    IN p_intitule VARCHAR(255),
+    IN p_contenu TEXT,
+    IN p_email VARCHAR(255)
+)
+BEGIN
+    INSERT INTO t_message_msg
+        (msg_intitule, msg_contenu, msg_email, msg_reponse, msg_date_question)
+    VALUES
+        (p_intitule, p_contenu, p_email, NULL, CURDATE());
+END;
+
+Fonction — nb_messages_non_traites()
+
+Compte les messages visiteurs dont msg_reponse est encore à NULL
+
+CREATE FUNCTION nb_messages_non_traites()
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE nb INT;
+    
+    SELECT COUNT(*)
+    INTO nb
+    FROM t_message_msg
+    WHERE msg_reponse IS NULL;
+    
+    RETURN nb;
+END;

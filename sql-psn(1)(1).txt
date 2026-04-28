@@ -1,0 +1,122 @@
+activité 1 :
+1)
+DELIMITER //
+CREATE FUNCTION `Nbpersonnes`(reu INT) RETURNS int(11)
+BEGIN
+    DECLARE nb INT;
+    DECLARE reunion_exists INT;
+
+    SELECT COUNT(*) INTO reunion_exists FROM t_reunion_reu WHERE reu_id = reu;
+
+    IF reunion_exists = 0 THEN
+        RETURN -1;
+    END IF;
+
+    SELECT COUNT(*) INTO nb FROM t_inscription_ins WHERE reu_id = reu;
+
+    RETURN nb;
+END;
+DELIMITER ;
+
+2)
+DELIMITER //
+CREATE PROCEDURE `gestion_document`(IN reu_id2 INT)
+BEGIN
+    DECLARE nb_par INT;
+    DECLARE intitule VARCHAR(500);
+    DECLARE reu_theme_var VARCHAR(255);
+    DECLARE document_exists INT;
+
+    SET nb_par = Nbpersonnes(reu_id2);
+
+        
+    SELECT reu_theme INTO reu_theme_var 
+    FROM t_reunion_reu 
+    WHERE reu_id = reu_id2;
+
+    SET intitule = CONCAT('CR ', reu_theme_var, ' - ', nb_par, ' participants');
+
+    SELECT COUNT(*) INTO document_exists 
+    FROM t_document_dcm 
+    WHERE reu_id = reu_id2;
+
+    IF document_exists = 0 THEN
+        INSERT INTO t_document_dcm (doc_titre, doc_url_fichier, reu_id)
+        VALUES (intitule, 'CR en attente', reu_id2);
+    ELSE
+        UPDATE t_document_dcm
+        SET doc_titre = intitule
+        WHERE reu_id = reu_id2;
+    END IF;
+END;
+DELIMITER ;
+
+3)
+CREATE TRIGGER `trigger_desinscription` AFTER DELETE ON `t_inscription_ins`
+BEGIN
+ FOR EACH ROW 
+    CALL gestion_document(OLD.reu_id);
+END
+
+4)
+CREATE TRIGGER `trigger_mise_a_jour` 
+AFTER INSERT ON `t_inscription_ins`
+ FOR EACH ROW BEGIN
+    CALL gestion_document(NEW.reu_id);
+END
+
+activité 2 :
+DELIMITER //
+CREATE FUNCTION `Liste_adresse`(reu_id INT) RETURNS text 
+BEGIN
+    DECLARE liste TEXT;
+
+    SELECT GROUP_CONCAT(
+                DISTINCT t_profil_pfl.pfl_email         
+                ORDER BY t_profil_pfl.pfl_email ASC     
+                SEPARATOR ', '                        
+            )
+    INTO liste
+    FROM t_inscription_ins
+    JOIN t_profil_pfl ON t_inscription_ins.cpt_id = t_profil_pfl.cpt_id
+    WHERE t_inscription_ins.reu_id = reu_id;
+
+    RETURN liste;
+END;
+DELIMITER ;
+
+
+activité 3 :
+1)
+DELIMITER //
+CREATE TRIGGER trigger_cr
+BEFORE UPDATE ON t_document_dcm 
+FOR EACH ROW
+BEGIN 
+    IF NEW.dcm_url_fichier LIKE '%.pdf' THEN
+	SET NEW.doc_titre=CONCAT(NEW.doc_titre,'  CR mis en ligne dans cette date',CURDATE());
+    END if;
+END;
+//DELIMITER
+
+
+2)
+DELIMITER//
+CREATE TRIGGER trigger2
+BEFORE DELETE ON t_reuinion_reu 
+FOR EACH ROW 
+BEGIN 
+	DELETE FROM t_inscription_ins WHERE reu_id=OLD.reu_id ;
+	DELETE FROM t_document_dcm WHERE reu_id=OLD.reu_id;
+END ; 
+//DELIMITER 
+
+
+
+
+LE trigger de l'activite2 s'execute avant la suppression d'une reuinion or que le trigger de l'activite1.4 s'execute apres la suppression de la reuinion .Alors le trigger de l'activite1.4 ne peut peut pas modifier la reuinion car elle est déjà supprimée ce qui cause un probleme c'est pourquoi il faut l'enlever pour tester le trigger 2 
+	
+
+
+
+
