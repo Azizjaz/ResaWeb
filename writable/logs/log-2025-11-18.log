@@ -1,0 +1,188 @@
+CRITICAL - 2025-11-18 14:14:55 --> ErrorException: Undefined variable $email
+[Method: POST, Route: message/creer]
+in APPPATH/Models/Db_model.php on line 79.
+ 1 APPPATH/Models/Db_model.php(79): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Message.php(60): App\Models\Db_model->set_message_simple()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->creer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 15:47:09 --> CodeIgniter\HTTP\Exceptions\HTTPException: Request URI segment is out of range: "2"
+[Method: GET, Route: /]
+in SYSTEMPATH/HTTP/URI.php on line 565.
+ 1 SYSTEMPATH/HTTP/URI.php(565): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange()
+ 2 APPPATH/Views/menu_visiteur.php(66): CodeIgniter\HTTP\URI->getSegment()
+ 3 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/menu_visiteur.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Accueil.php(19): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Accueil->afficher()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 15:52:18 --> CodeIgniter\HTTP\Exceptions\HTTPException: Request URI segment is out of range: "2"
+[Method: GET, Route: /]
+in SYSTEMPATH/HTTP/URI.php on line 565.
+ 1 SYSTEMPATH/HTTP/URI.php(565): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange()
+ 2 APPPATH/Views/menu_visiteur.php(67): CodeIgniter\HTTP\URI->getSegment()
+ 3 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/menu_visiteur.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Accueil.php(19): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Accueil->afficher()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 15:52:22 --> CodeIgniter\HTTP\Exceptions\HTTPException: Request URI segment is out of range: "2"
+[Method: GET, Route: /]
+in SYSTEMPATH/HTTP/URI.php on line 565.
+ 1 SYSTEMPATH/HTTP/URI.php(565): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange()
+ 2 APPPATH/Views/menu_visiteur.php(67): CodeIgniter\HTTP\URI->getSegment()
+ 3 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/menu_visiteur.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Accueil.php(19): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Accueil->afficher()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 18:12:36 --> ParseError: syntax error, unexpected token "."
+[Method: GET, Route: message/suivre]
+in APPPATH/Controllers/Message.php on line 91.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 18:14:27 --> ArgumentCountError: Too few arguments to function App\Controllers\Message::suivre(), 0 passed in /home/2025DIINL3/e22307806/public_html/V1/ci/system/CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: message/suivre]
+in APPPATH/Controllers/Message.php on line 82.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 18:15:26 --> ArgumentCountError: Too few arguments to function App\Controllers\Message::suivre(), 0 passed in /home/2025DIINL3/e22307806/public_html/V1/ci/system/CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: message/suivre]
+in APPPATH/Controllers/Message.php on line 82.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:09:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "affichage_acceuil.php"
+[Method: GET, Route: message/suivre]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Message.php(89): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:16:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "affichage_code.php"
+[Method: GET, Route: message/suivre/aggg]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Message.php(98): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:16:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: message/suivre/aggg]
+in APPPATH/Views/affichage_message.php on line 10.
+ 1 APPPATH/Views/affichage_message.php(10): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/affichage_message.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Message.php(98): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:18:24 --> ParseError: syntax error, unexpected token "return", expecting "," or ";"
+[Method: GET, Route: message/suivre/aggg]
+in APPPATH/Controllers/Message.php on line 98.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:19:18 --> ParseError: syntax error, unexpected token "echo"
+[Method: GET, Route: message/suivre/aggg]
+in APPPATH/Controllers/Message.php on line 100.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:20:10 --> ParseError: syntax error, unexpected token "echo", expecting ";"
+[Method: GET, Route: message/suivre/aggg]
+in APPPATH/Controllers/Message.php on line 99.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:26:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: message/suivre/hhhhhhhhhh]
+in APPPATH/Views/affichage_message.php on line 5.
+ 1 APPPATH/Views/affichage_message.php(5): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/affichage_message.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Message.php(101): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-11-18 19:26:51 --> ErrorException: Undefined variable $message
+[Method: GET, Route: message/suivre/hhhhhhhhhhh]
+in APPPATH/Views/affichage_message.php on line 5.
+ 1 APPPATH/Views/affichage_message.php(5): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/2025DIINL3/e22307806/public_html/V1/ci/app/Views/affichage_message.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Message.php(101): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Message->suivre()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
